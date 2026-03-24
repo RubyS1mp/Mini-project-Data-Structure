@@ -1,23 +1,26 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
 #define MAX 5
 
+// Array untuk menyimpan riwayat, dan top sebagai posisi teratas
 string stack[MAX];
 int top = -1;
 
+// Menambah item ke atas tumpukan buku (seperti naruh buku baru di atas tumpukan)
 void push(string name) {
     if (top == MAX - 1) { cout << "Riwayat penuh!\n"; return; }
     stack[++top] = name;
     cout << name << " masuk riwayat.\n";
 }
 
+// Menghapus item paling atas (yang paling terakhir masuk, duluan keluar (LIFO) )
 void pop() {
     if (top == -1) { cout << "Riwayat kosong!\n"; return; }
     cout << stack[top--] << " dihapus dari riwayat.\n";
 }
 
+// Menampilkan semua isi riwayat dari yang paling baru ke paling lama
 void tampil() {
     if (top == -1) { cout << "Riwayat kosong!\n"; return; }
     cout << "\n=== Riwayat ===\n";
